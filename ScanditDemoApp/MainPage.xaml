@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+             xmlns:vm="clr-namespace:ScanditDemoApp.ViewModel"  
+             xmlns:m="clr-namespace:ScanditDemoApp.Model" 
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit" 
+             xmlns:scandit="clr-namespace:Scandit.DataCapture.Barcode.Spark.UI.Maui;assembly=ScanditBarcodeCaptureMaui"
+             x:Class="ScanditDemoApp.MainPage"       
+             HideSoftInputOnTapped="True"
+             Title="MainPage" 
+             x:Name="Page"
+             x:DataType="vm:MainPageViewModel">
+    <AbsoluteLayout>
+        <Grid
+            Padding="20,20,20,20"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            RowDefinitions="Auto">
+            <Button
+                Grid.Row="0"
+                Text="Go Back"
+                Command="{Binding ShowPopupCommand}"/>
+        </Grid>
+        <scandit:SparkScanView
+            x:Name="SparkScanView"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            DataCaptureContext="{Binding DataCaptureContext}"
+            SparkScan="{Binding SparkScan}"
+            SparkScanViewSettings="{Binding ViewSettings}"/>
+    </AbsoluteLayout>
+</ContentPage>
