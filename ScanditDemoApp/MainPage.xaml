@@ -18,7 +18,7 @@
             RowDefinitions="Auto">
             <Button
                 Grid.Row="0"
-                Text="Go Back"
+                Text="Show Popup"
                 Command="{Binding ShowPopupCommand}"/>
         </Grid>
         <scandit:SparkScanView

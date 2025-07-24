@@ -25,7 +25,7 @@
                 Text="{Binding LastScannedBarcode}"/>
             <Button 
                 Grid.Row="2"
-                Text="Previous"
+                Text="Close Popup"
                 Command="{Binding ClosePopupCommand}">
             </Button>
         </Grid>
